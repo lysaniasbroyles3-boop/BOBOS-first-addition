@@ -1,0 +1,61 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Real-Time Marketing API",
+    "description" : "API for real-time marketing operations",
+    "version" : "1.0.0"
+  },
+  "paths" : {
+    "/marketing/realtime" : {
+      "post" : {
+        "operationId" : "executeRealTimeMarketing",
+        "summary" : "Execute real-time marketing action",
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "campaignId" : {
+                    "type" : "string"
+                  },
+                  "userId" : {
+                    "type" : "string"
+                  },
+                  "action" : {
+                    "type" : "string",
+                    "description" : "Marketing action to perform in real-time"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Real-time marketing action executed successfully",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "status" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : { }
+  }
+}
